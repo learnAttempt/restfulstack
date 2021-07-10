@@ -56,15 +56,20 @@
                         method : 'GET',
                         url : 'http://localhost:8081/api/v1/stack'
                     }).then(function successCallback(response) {
-                        $scope.stack = response.data;
+                    	if(response.data==="")
+                        $scope.stack = -1;
+                        else
+                        $scope.stack=response.data
                     }, function errorCallback(response) {
+                    		 $scope.stack = -1;
                         console.log(response.statusText);
                     });
                 }
          
                 function _success(response) {
-                    _refreshStackData();
-										_clearFormData()
+
+										_clearFormData();
+										_refreshStackData();
                 }
          
                 function _error(response) {
@@ -74,7 +79,7 @@
                 //Clear the form
                 function _clearFormData() {
                     $scope.stackForm.value=-1;
-
+										$scope.stack=-1;
                 
                 };
             });
@@ -181,7 +186,7 @@ td, th {
 
 
 			<td>
-				| <a ng-click="popStack()" class="red-button">Pop</a></td>
+				<a ng-click="popStack()" class="red-button">Pop</a></th>
 		</tr>
 
 	</table>
