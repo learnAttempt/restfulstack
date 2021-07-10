@@ -1,0 +1,6 @@
+com/solution/webservice/controller/StackController.class
+com/solution/webservice/model/StackCustom.class
+com/solution/webservice/Application.class
+com/solution/webservice/controller/RestResponseEntityExceptionHandler.class
+com/solution/webservice/model/StackCustom$StackCustomBuilder.class
+com/solution/webservice/service/StackService.class
