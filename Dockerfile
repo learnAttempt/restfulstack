@@ -1,4 +1,5 @@
 
+
 FROM tomcat:8.5-alpine
 VOLUME /tmp
 ARG WAR_FILE=target/restfulstack.war
