@@ -36,10 +36,10 @@ jobs:
         id: vars
         run: echo ::set-output name=tag::$(echo ${GITHUB_REF:10})
       - name: Build the tagged Docker image
-        run: docker build . --file Dockerfile --tag learnAttempt/restful-stack:${{steps.vars.outputs.tag}}
+        run: docker build . --file Dockerfile --tag learnattempt/restful-stack:${{steps.vars.outputs.tag}}
       - name: Push the tagged Docker image
         run: docker push learnAttempt/restful-stack:${{steps.vars.outputs.tag}}
       - name: Build the latest Docker image
-        run: docker build . --file Dockerfile --tag learnAttempt/restful-stacki:latest
+        run: docker build . --file Dockerfile --tag learnattempt/restful-stacki:latest
       - name: Push the latest Docker image
-        run: docker push learnAttempt/restful-stack:latest
+        run: docker push learnattempt/restful-stack:latest
