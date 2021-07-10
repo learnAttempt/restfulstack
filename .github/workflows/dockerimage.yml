@@ -34,6 +34,6 @@ jobs:
         id: vars
         run: echo ::set-output name=tag::$(echo ${GITHUB_REF:10})
       - name: Build the latest Docker image
-        run: docker build . --file Dockerfile --tag learnattempt/restful-stack:latest
+        run: docker build . --file Dockerfile --tag ${{ secrets.DOCKER_HUB_USERNAME }}/restful-stack:latest
       - name: Push the latest Docker image
-        run: docker push learnattempt/restful-stack:latest
+        run: docker push ${{ secrets.DOCKER_HUB_USERNAME }}/restful-stack:latest
